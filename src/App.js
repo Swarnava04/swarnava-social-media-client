@@ -44,7 +44,9 @@ function App() {
           <Route element={<Home />}>
             <Route path="/" element={<Feed />} />
             <Route path="/profile/:userId" element={<Profile />} />
-            <Route path="/updateprofile" element={<UpdateProfile />} />
+            <Route path="/updateprofile" element={<UpdateProfile />} /> //these
+            are all the routes(random comment to check whether it is working on
+            git and github)
           </Route>
         </Route>
 
