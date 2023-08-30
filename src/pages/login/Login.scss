@@ -1,0 +1,36 @@
+.Login{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .login-box{
+        text-align: left;
+        padding: 40px;
+        width: 250px;
+        border: 4px solid black;
+    }
+    .heading{
+        text-align: center;
+    }
+    label, input{
+        display: block;
+    }
+    input{
+        padding: 8px 16px;
+        border-radius: 5px;
+        width: 220px;
+    }
+    .submit{
+        margin-top: 15px;
+        width: 255px;
+        background-color: rgb(255, 247, 0);
+        color: rgb(0, 6, 6);
+    }
+    .submit:hover{
+        background-color: rgb(98, 95, 8);
+        font-weight: bold;
+    }
+    p{
+        font-size: 13px;
+    }
+}
