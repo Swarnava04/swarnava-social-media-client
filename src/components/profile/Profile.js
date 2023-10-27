@@ -30,7 +30,7 @@ function Profile() {
         (eachFollowing) => eachFollowing._id === params.userId
       )
     );
-    console.log(userProfile);
+    // console.log(userProfile);
   }, [myProfile, params.userId, feedData]);
   function handleFollowButton() {
     dispatch(

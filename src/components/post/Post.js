@@ -9,7 +9,7 @@ import {
   deletePostController,
   likeAndUnlikePost,
 } from "../../redux/slices/postsSlice";
-import { setLoading, setToast } from "../../redux/slices/appConfigSlice";
+import { setToast } from "../../redux/slices/appConfigSlice";
 import { TOAST_SUCCESS } from "../../App";
 function Post({ post }) {
   const dispatch = useDispatch();
@@ -27,8 +27,10 @@ function Post({ post }) {
       })
     );
   }
+
   async function handledeletePostButton() {
     try {
+      console.log("we are inside delete post button");
       dispatch(
         deletePostController({
           postId: post._id,
@@ -36,16 +38,9 @@ function Post({ post }) {
       );
     } catch (e) {
       return Promise.reject(e);
-    } finally {
-      dispatch(
-        setToast({
-          type: TOAST_SUCCESS,
-          message: "Post deleted successfully",
-        })
-      );
     }
-    console.log("we are inside delete post button");
   }
+
   return (
     <div className="Post">
       <div

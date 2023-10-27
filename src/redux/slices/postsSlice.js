@@ -1,9 +1,12 @@
+// import { useDispatch } from "react-redux";
 import { axiosClient } from "../../utils/axiosClient";
+import { setToast } from "./appConfigSlice";
+import { TOAST_SUCCESS } from "../../App";
 // import { setLoading } from "./appConfigSlice";
 const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
 export const getUserProfile = createAsyncThunk(
   "user/getUserProfile",
-  async (body, thunkAPI) => {
+  async (body) => {
     try {
       // thunkAPI.dispatch(setLoading(true));
       // console.log(body);
@@ -45,6 +48,13 @@ export const deletePostController = createAsyncThunk(
       return response;
     } catch (e) {
       return Promise.reject(e);
+    } finally {
+      thunkAPI.dispatch(
+        setToast({
+          key: TOAST_SUCCESS,
+          message: "Logged in successfully",
+        })
+      );
     }
   }
 );
