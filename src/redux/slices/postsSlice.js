@@ -52,7 +52,7 @@ export const deletePostController = createAsyncThunk(
       thunkAPI.dispatch(
         setToast({
           key: TOAST_SUCCESS,
-          message: "Logged in successfully",
+          message: "Post deleted successfully",
         })
       );
     }
