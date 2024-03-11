@@ -6,7 +6,7 @@ export const getMyInfo = createAsyncThunk(
     try {
       // thunkAPI.dispatch(setLoading(true));
       const response = await axiosClient.get("/user/getMyInfo");
-      console.log("getMyInfo wala api is working", response);
+      // console.log("getMyInfo wala api is working", response);
       return response;
     } catch (e) {
       return Promise.reject(e);
@@ -23,7 +23,7 @@ export const updateMyProfile = createAsyncThunk(
     try {
       // thunkAPI.dispatch(setLoading(true));
       const response = await axiosClient.put("/user/updateUserProfile", body);
-      console.log(response);
+      // console.log(response);
       return response;
     } catch (e) {
       return Promise.reject(e);

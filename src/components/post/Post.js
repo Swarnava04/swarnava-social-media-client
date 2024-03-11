@@ -30,7 +30,7 @@ function Post({ post }) {
 
   async function handledeletePostButton() {
     try {
-      console.log("we are inside delete post button");
+      // console.log("we are inside delete post button");
       dispatch(
         deletePostController({
           postId: post._id,

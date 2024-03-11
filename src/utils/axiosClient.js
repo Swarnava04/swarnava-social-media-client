@@ -63,7 +63,7 @@ axiosClient.interceptors.response.use(
         originalRequest.headers[
           "Authorization"
         ] = `Bearer ${response.data.result}`;
-        console.log(originalRequest);
+        // console.log(originalRequest);
         return axios(originalRequest);
       } else {
         //refreshtoken is expired, thus we go back to the login page

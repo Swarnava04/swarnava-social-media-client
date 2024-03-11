@@ -11,7 +11,7 @@ export const getUserProfile = createAsyncThunk(
       // thunkAPI.dispatch(setLoading(true));
       // console.log(body);
       const response = await axiosClient.post("/user/getUserProfile", body);
-      console.log("getUserProfile wala api is working", response);
+      // console.log("getUserProfile wala api is working", response);
       return response;
     } catch (e) {
       return Promise.reject(e);
@@ -28,7 +28,7 @@ export const likeAndUnlikePost = createAsyncThunk(
     try {
       // thunkAPI.dispatch(setLoading(true));
       const response = await axiosClient.post("/posts/like", body);
-      console.log("like wala api  is working", response);
+      // console.log("like wala api  is working", response);
       return response;
     } catch (e) {
       return Promise.reject(e);
@@ -74,20 +74,20 @@ const postsSlice = createSlice({
         const index = state?.userProfile?.posts?.findIndex(
           (singlePost) => singlePost._id === post._id
         );
-        console.log("postIndex ", index);
+        // console.log("postIndex ", index);
         if (index !== undefined && index !== -1) {
           state.userProfile.posts[index] = post; //updating with the new post(everything is the same other than the like and unlike parameter)'
           // console.log("the final post is", state.userProfile);
         }
       })
       .addCase(deletePostController.fulfilled, (state, action) => {
-        console.log("we are inside delete post reducer");
+        // console.log("we are inside delete post reducer");
         const deletedPost = action.payload.result;
         const index = state?.userProfile?.posts.findIndex(
           //fetching the index of the deleted post in the current set of posts in the user index
           (eachPost) => eachPost._id === deletedPost._id
         );
-        console.log("the index of the deleted post is", index);
+        // console.log("the index of the deleted post is", index);
         state.userProfile?.posts?.splice(index, 1);
       });
   },
