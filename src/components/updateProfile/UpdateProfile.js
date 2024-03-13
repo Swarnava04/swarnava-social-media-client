@@ -31,7 +31,7 @@ function UpdateProfile() {
     fileReader.onload = () => {
       if (fileReader.readyState === fileReader.DONE) {
         setUserImg(fileReader.result);
-        console.log(fileReader.result);
+        // console.log(fileReader.result);
       }
     };
   }

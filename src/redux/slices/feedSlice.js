@@ -24,7 +24,7 @@ export const followAndUnfollowUser = createAsyncThunk(
     try {
       // thunkAPI.dispatch(setLoading(true));
       const response = await axiosClient.post("/user/follow", body);
-      console.log("follow and unfollow wala api is working", response);
+      // console.log("follow and unfollow wala api is working", response);
       return response;
     } catch (e) {
       return Promise.reject(e);
@@ -48,7 +48,7 @@ const feedSlice = createSlice({
       const index = state.feedData?.posts?.findIndex(
         (item) => item._id === post._id
       );
-      console.log("feedindex ", index);
+      // console.log("feedindex ", index);
       // console.log("the posts are(inside the extraReducer)", post);
       if (index !== undefined && index !== -1) {
         state.feedData.posts[index] = post;
@@ -57,7 +57,7 @@ const feedSlice = createSlice({
     builder.addCase(followAndUnfollowUser.fulfilled, (state, action) => {
       // console.log(action.payload, "it is fullfilled");
       const user = action.payload.result.user;
-      console.log("user inside the reducer is", user);
+      // console.log("user inside the reducer is", user);
       // console.log(userId);
       // const isTrue = state.feedData;
       // const isTrue2 = state?.feedData?.followings;
@@ -65,7 +65,7 @@ const feedSlice = createSlice({
       const index = state.feedData?.followings?.findIndex(
         (item) => item._id === user._id
       );
-      console.log("inside follow and unfollow reducer", index);
+      // console.log("inside follow and unfollow reducer", index);
       if (index !== -1) {
         //already present
         state?.feedData?.followings?.splice(index, 1);

@@ -12,7 +12,7 @@ function Follower({ user }) {
   const feedData = useSelector((state) => state.getFeedReducer.feedData);
   const [isFollowing, setIsFollowing] = useState(false);
   useEffect(() => {
-    console.log("feedData", feedData);
+    // console.log("feedData", feedData);
     if (
       feedData?.followings?.find(
         (eachFollowing) => eachFollowing._id === user._id
