@@ -46,7 +46,7 @@ function App() {
             <Route path="/profile/:userId" element={<Profile />} />
             <Route path="/updateprofile" element={<UpdateProfile />} /> //these
             are all the routes(random comment to check whether it is working on
-            git and github)
+            git and github) //hello random check 2
           </Route>
         </Route>
 
